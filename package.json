@@ -1,0 +1,24 @@
+{
+  "name": "mal-hide-eps",
+  "displayName": "MAL No Total Episodes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "webextension-polyfill": "^0.12.0"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.0.8",
+    "vite-plugin-web-extension": "^4.5.1",
+    "vite-plugin-zip-pack": "^1.2.4",
+    "@types/node": "^25.6.0",
+    "@types/webextension-polyfill": "^0.12.5",
+    "@types/adm-zip": "^0.5.8",
+    "adm-zip": "^0.5.17"
+  },
+  "private": true
+}

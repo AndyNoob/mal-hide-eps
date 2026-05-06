@@ -1,0 +1,13 @@
+/* anime page, profile page, list page, top anime page, friend status */
+#curEps, .text.anime, .data.progress, .information.di-ib.mt4, .work-status {
+  visibility: hidden;
+}
+/* anime search page */
+.prodsrc .info .item:nth-child(3) {
+  visibility: hidden;
+}
+
+/* main page */
+span.info.pt8 {
+  visibility: hidden;
+}
