@@ -8,7 +8,7 @@ const browserType = process.env["BROWSER"] ?? "firefox";
 console.log(`compiling for ${browserType}`);
 
 export default defineConfig({
-  // publicDir: "icons",
+  publicDir: "icons",
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -41,11 +41,15 @@ function makeManifest() {
     name: pkg.displayName,
     version: pkg.version,
     description: pkg.description,
-    // icons: {
-    //   "32": "icon-32.png",
-    //   "64": "icon-64.png",
-    //   "128": "icon-128.png"
-    // },
+    icons: browserType === "chrome" ? {
+      "32": "icon-32.png",
+      "64": "icon-64.png",
+      "128": "icon-128.png"
+    } : {
+      "32": "icon-32.svg",
+      "64": "icon-64.svg",
+      "128": "icon-128.svg"
+    },
     host_permissions: ["*://*.myanimelist.net/*"],
     content_scripts: [
       {
