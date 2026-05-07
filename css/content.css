@@ -3,11 +3,16 @@
   visibility: hidden;
 }
 /* anime search page */
-.prodsrc .info .item:nth-child(3) {
+.prodsrc .info .item:last-child {
   visibility: hidden;
 }
 
 /* main page */
 span.info.pt8 {
+  visibility: hidden;
+}
+
+/* interest stack */
+.list-anime-list .info {
   visibility: hidden;
 }

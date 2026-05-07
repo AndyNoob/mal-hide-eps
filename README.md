@@ -10,3 +10,4 @@ A really, really simple web extension that hides total episode count on the foll
 * Top anime page
 * Anime search page
 * Seasonal anime page
+* Interest stacks

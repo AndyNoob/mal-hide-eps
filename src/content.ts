@@ -70,8 +70,9 @@ function hideListPageEps() {
 function hideTheOtherOnes() {
   // top anime, anime search, main page
   const selected = [...document.querySelectorAll(".information.di-ib.mt4")];
-  selected.push(...document.querySelectorAll(".prodsrc .info .item:nth-child(3)"));
+  selected.push(...document.querySelectorAll(".prodsrc .info .item:last-child"));
   selected.push(...document.querySelectorAll("span.info.pt8"));
+  selected.push(...document.querySelectorAll(".list-anime-list .info"));
   console.groupCollapsed(`[hideTheOtherOnes] checking ${selected.length} in list`);
   for (let element of selected) {
     console.log(element);
