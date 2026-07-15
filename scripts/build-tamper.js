@@ -7,13 +7,23 @@ const tamperMonkeyHeader = await generate("tampermonkey", {
   namespace: "https://github.com/AndyNoob",
   matches: ["https://*.myanimelist.net/*"],
   packagePath: "./package.json",
-  grants: ["GM_addStyle"],
   downloadURL: "https://raw.githubusercontent.com/AndyNoob/mal-hide-eps/refs/heads/main/tamper-monkey/mal-hide-eps.user.js",
   updateURL: "https://raw.githubusercontent.com/AndyNoob/mal-hide-eps/refs/heads/main/tamper-monkey/mal-hide-eps.user.js",
 });
 
 let css = await readFile("./dist/css/content.css", "utf-8");
 let content = await readFile("./dist/src/content.js", "utf-8");
-content = `${tamperMonkeyHeader}\n\nGM_addStyle(\`${css}\`)\n\n${content}`;
+content = `${tamperMonkeyHeader}
+
+(function() {
+  const addStyle = (css) => {
+      const style = document.createElement('style');
+      style.textContent = css;
+      document.head.appendChild(style);
+  };
+  addStyle(\`${css}\`);
+})();
+
+${content}`;
 const out = `./tamper-monkey/mal-hide-eps.user.js`;
 await writeFile(out, content);

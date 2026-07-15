@@ -6,7 +6,7 @@
 // @description    Hide total episode counts of anime on MyAnimeList.
 // @license        MIT
 // @match          https://*.myanimelist.net/*
-// @grant         
+// @grant          none
 // @run-at         document-start
 // @downloadURL    https://raw.githubusercontent.com/AndyNoob/mal-hide-eps/refs/heads/main/tamper-monkey/mal-hide-eps.user.js
 // @supportURL     https://github.com/AndyNoob/mal-hide-eps/issues
@@ -15,7 +15,13 @@
 // @homepage       https://github.com/AndyNoob/mal-hide-eps
 // ==/UserScript==
 
-GM_addStyle(`/* anime page, profile page, list page, top anime page, friend status */
+(function() {
+  const addStyle = (css) => {
+      const style = document.createElement('style');
+      style.textContent = css;
+      document.head.appendChild(style);
+  };
+  addStyle(`/* anime page, profile page, list page, top anime page, friend status */
 #curEps, .text.anime, .data.progress, .information.di-ib.mt4, .work-status {
   visibility: hidden;
 }
@@ -32,7 +38,8 @@ span.info.pt8 {
 /* interest stack */
 .list-anime-list .info {
   visibility: hidden;
-}`)
+}`);
+})();
 
 (function() {
 	//#region src/content.ts
