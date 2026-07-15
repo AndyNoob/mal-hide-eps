@@ -23,7 +23,7 @@ function hideProfilePageEps() {
   console.groupCollapsed(`[hideProfilePageEps] checking ${selected.length} in list`);
   for (let element of selected) {
     if (element.classList.contains("watching")) {
-      (element as HTMLElement).style.visibility = "visible";
+      // (element as HTMLElement).style.visibility = "visible";
       console.log(element)
       const graph = element.parentElement?.parentElement?.querySelector(".graph.fl-l");
       if (graph) {

@@ -25,6 +25,11 @@
 #curEps, .text.anime, .data.progress, .information.di-ib.mt4, .work-status {
   visibility: hidden;
 }
+
+.text.manga.reading, .text.anime.watching {
+  visibility: hidden;
+}
+
 /* anime search page */
 .prodsrc .info .item:last-child {
   visibility: hidden;
@@ -32,6 +37,10 @@
 
 /* main page */
 span.info.pt8 {
+  visibility: hidden;
+}
+
+.my_list_updates .item .info p:nth-child(2) {
   visibility: hidden;
 }
 
