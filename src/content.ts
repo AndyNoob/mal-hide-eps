@@ -11,7 +11,6 @@ function hideAnimePageEps() {
     const eps = element as HTMLSpanElement;
     console.log(eps);
     eps.innerText = "--";
-    eps.dataset["num"] = "0";
     eps.style.visibility = "visible";
   }
   console.groupEnd();
@@ -37,7 +36,6 @@ function hideProfilePageEps() {
         node.textContent?.includes("/")
       );
     if (!target) continue;
-    // console.log(target);
     const targetEl = target as HTMLElement;
     targetEl.textContent = targetEl.textContent.replace(/\d+/, "--");
   }
@@ -64,6 +62,15 @@ function hideListPageEps() {
       el.textContent = "--";
     }
   }
+  console.log("checking information section");
+  const span = document.evaluate(
+    "//span[contains(., 'Episodes')]",
+    document,
+    null,
+    XPathResult.ANY_TYPE,
+    null
+  ).iterateNext();
+  if (span && span.parentElement) span.parentElement.style.filter = "blur(10px)";
   console.groupEnd();
 }
 

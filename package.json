@@ -5,20 +5,33 @@
   "description": "Hide total episode counts of anime on MyAnimeList.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "build-tamper": "node scripts/build-tamper.js"
   },
   "dependencies": {
+    "@userscripters/generate-headers": "^3.5.0",
     "webextension-polyfill": "^0.12.0"
   },
   "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "@types/node": "^25.6.0",
+    "@types/webextension-polyfill": "^0.12.5",
+    "adm-zip": "^0.5.17",
     "typescript": "^6.0.3",
     "vite": "^8.0.8",
     "vite-plugin-web-extension": "^4.5.1",
-    "vite-plugin-zip-pack": "^1.2.4",
-    "@types/node": "^25.6.0",
-    "@types/webextension-polyfill": "^0.12.5",
-    "@types/adm-zip": "^0.5.8",
-    "adm-zip": "^0.5.17"
+    "vite-plugin-zip-pack": "^1.2.4"
   },
-  "private": true
+  "private": true,
+  "author": "AndyNoob",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/AndyNoob/mal-hide-eps",
+  "bugs": {
+    "url": "https://github.com/AndyNoob/mal-hide-eps/issues"
+  },
+  "repository": {
+    "url": "git@github.com:AndyNoob/mal-hide-eps.git",
+    "type": "git"
+  }
 }
