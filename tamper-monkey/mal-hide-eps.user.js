@@ -43,11 +43,13 @@ span.info.pt8 {
 
 (function() {
 	//#region src/content.ts
-	hideAnimePageEps();
-	hideProfilePageEps();
-	hideListPageEps();
-	hideTheOtherOnes();
-	hideFriendStatus();
+	window.addEventListener("load", () => {
+		hideAnimePageEps();
+		hideProfilePageEps();
+		hideListPageEps();
+		hideTheOtherOnes();
+		hideFriendStatus();
+	});
 	function hideAnimePageEps() {
 		const selected = document.querySelectorAll("#curEps");
 		console.groupCollapsed(`[hideAnimePageEps] checking ${selected.length} in list`);
