@@ -19,7 +19,7 @@
   const addStyle = (css) => {
       const style = document.createElement('style');
       style.textContent = css;
-      document.head.appendChild(style);
+      (document.head || document.documentElement).appendChild(style);
   };
   addStyle(`/* anime page, profile page, list page, top anime page, friend status */
 #curEps, .text.anime, .data.progress, .information.di-ib.mt4, .work-status {
@@ -52,7 +52,13 @@ span.info.pt8 {
 
 (function() {
 	//#region src/content.ts
-	window.addEventListener("load", () => {
+	if (document.readyState === "complete") {
+		hideAnimePageEps();
+		hideProfilePageEps();
+		hideListPageEps();
+		hideTheOtherOnes();
+		hideFriendStatus();
+	} else window.addEventListener("load", () => {
 		hideAnimePageEps();
 		hideProfilePageEps();
 		hideListPageEps();
@@ -75,7 +81,6 @@ span.info.pt8 {
 		console.groupCollapsed(`[hideProfilePageEps] checking ${selected.length} in list`);
 		for (let element of selected) {
 			if (element.classList.contains("watching")) {
-				element.style.visibility = "visible";
 				console.log(element);
 				const graph = element.parentElement?.parentElement?.querySelector(".graph.fl-l");
 				if (graph) {

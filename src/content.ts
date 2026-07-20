@@ -1,10 +1,18 @@
-window.addEventListener("load", () => {
+if (document.readyState === "complete") {
   hideAnimePageEps();
   hideProfilePageEps();
   hideListPageEps();
   hideTheOtherOnes();
   hideFriendStatus();
-});
+} else {
+  window.addEventListener("load", () => {
+    hideAnimePageEps();
+    hideProfilePageEps();
+    hideListPageEps();
+    hideTheOtherOnes();
+    hideFriendStatus();
+  });
+}
 
 function hideAnimePageEps() {
   const selected = document.querySelectorAll("#curEps");

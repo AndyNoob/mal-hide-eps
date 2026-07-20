@@ -19,7 +19,7 @@ content = `${tamperMonkeyHeader}
   const addStyle = (css) => {
       const style = document.createElement('style');
       style.textContent = css;
-      document.head.appendChild(style);
+      (document.head || document.documentElement).appendChild(style);
   };
   addStyle(\`${css}\`);
 })();
